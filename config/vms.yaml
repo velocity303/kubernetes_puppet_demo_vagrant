@@ -29,6 +29,7 @@ vms:
       - 4-cpus
       - base
       - trusted_fact_kubernetes_master
+      - update_redhat
 
   - name: kubernetes_node1
     box: puppetlabs/centos-7.0-64-nocm
@@ -40,6 +41,7 @@ vms:
       - 4-cpus
       - base
       - trusted_fact_kubernetes_node
+      - update_redhat
 
   - name: kubernetes_node2
     box: puppetlabs/centos-7.0-64-nocm 
@@ -51,6 +53,7 @@ vms:
       - 4-cpus
       - base
       - trusted_fact_kubernetes_node
+      - update_redhat
 
   - name: kubernetes_node3
     box: puppetlabs/centos-7.0-64-nocm 
@@ -62,6 +65,7 @@ vms:
       - 4-cpus
       - base
       - trusted_fact_kubernetes_node
+      - update_redhat
 
 
 

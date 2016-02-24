@@ -23,6 +23,12 @@ roles:
       - type: shell
         inline: 'mkdir -p /etc/puppetlabs/puppet; cp /vagrant/trusted_facts/aio_pe_csr_attributes.yaml /etc/puppetlabs/puppet/csr_attributes.yaml'
 
+  update_redhat:
+    provisioners:
+      - type: shell
+        inline: '/usr/bin/yum update -y'
+
+
   trusted_fact_kubernetes_master:
     provisioners:
       - type: shell
