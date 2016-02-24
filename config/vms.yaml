@@ -1,0 +1,69 @@
+---
+vms:
+
+  # NOTE: All `box:` declarations in this example point to vagrantcloud.com
+  # and require Vagrant 1.5.0 or newer to function.
+  - name: puppet-master
+    box: puppetlabs/centos-7.0-64-nocm 
+    roles:
+      - pe-forward-console
+#      - run_r10k
+      - master
+      - pe-memory-tuning2
+      - trusted_fact_aio_pe
+      - el-stop-firewall
+      - el-fix-path
+      - 4-cpus
+      - 4gb-memory
+      - base
+      - setup_codemanager
+
+
+  - name: kubernetes_master
+    box: puppetlabs/centos-7.0-64-nocm
+    roles:
+      - agent
+      - el-stop-firewall
+      - el-fix-path
+      - 1gb-memory
+      - 4-cpus
+      - base
+      - trusted_fact_kubernetes_master
+
+  - name: kubernetes_node1
+    box: puppetlabs/centos-7.0-64-nocm
+    roles:
+      - agent
+      - el-stop-firewall
+      - el-fix-path
+      - 1gb-memory
+      - 4-cpus
+      - base
+      - trusted_fact_kubernetes_node
+
+  - name: kubernetes_node2
+    box: puppetlabs/centos-7.0-64-nocm 
+    roles:
+      - agent
+      - el-stop-firewall
+      - el-fix-path
+      - 1gb-memory
+      - 4-cpus
+      - base
+      - trusted_fact_kubernetes_node
+
+  - name: kubernetes_node3
+    box: puppetlabs/centos-7.0-64-nocm 
+    roles:
+      - agent
+      - el-stop-firewall
+      - el-fix-path
+      - 1gb-memory
+      - 4-cpus
+      - base
+      - trusted_fact_kubernetes_node
+
+
+
+
+# vim: set ft=yaml:
