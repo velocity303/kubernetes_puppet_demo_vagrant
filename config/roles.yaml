@@ -73,7 +73,7 @@ roles:
       - type: pe_bootstrap
         role: :master
         answer_extras:
-          - "q_puppetmaster_r10k_remote='https://github.com/velocity303/app_orch_control_repo.git'"
+          - "q_puppetmaster_r10k_remote='https://github.com/velocity303/kubernetes_demo_control_repo.git'"
           - "q_puppetmaster_code_manager_auto_configure=y"
           - "q_puppetmaster_r10k_private_key='/etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa'"
       - type: shell
